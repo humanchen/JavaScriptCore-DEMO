@@ -1,0 +1,12 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>H5 And Android</title><script>//定义本地方法 效果提供给Android端调用   被调用后将获得参数值
+    function callH5(data){
+        document.getElementById("result").innerHTML="原生调用JS:"+data;
+        return 'yes';
+    }  
+    
+    
+    //定义本地点击事件 效果调用Android方法 传递参数给Android客服端
+    function myOnclick(){
+        document.getElementById("result").innerHTML="按钮被点击了"//调用android本地方法  调用对象由Android定义实例化，调用方法由Android提供 (具体对象名和方法待定，可变更)        myObj.callAndroid("弹窗显示回调成功了～～～");  
+    }
+    </script></head><body><button id="button" onclick="myOnclick()">点击调用Android方法</button><p/><div id="result">效果展示</div></body></html>
